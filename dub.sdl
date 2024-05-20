@@ -1,0 +1,5 @@
+name "dxc"
+description "D Cross Compiler"
+authors "Jacob Carlborg"
+copyright "Copyright © 2024, Jacob Carlborg"
+license "BSL-1.0"

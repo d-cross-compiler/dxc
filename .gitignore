@@ -1,0 +1,16 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/dxc
+dxc.so
+dxc.dylib
+dxc.dll
+dxc.a
+dxc.lib
+dxc-test-*
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst
