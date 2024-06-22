@@ -17,14 +17,20 @@ struct Plist
         return Plist(rootDict);
     }
 
-    int getInteger(string key) => getValueFor(key).to!int;
-    string getString(string key) => getValueFor(key);
+    int getInteger(string key) => getValueFor(key, ofType: "integer").to!int;
+    string getString(string key) => getValueFor(key, ofType: "string");
+    SysTime getDate(string key) =>
+        SysTime.fromISOExtString(getValueFor(key, ofType: "date"));
 
     private size_t indexOfKey(string key) =>
         root
             .children
             .countUntil!(e => e.name == "key" && e.children.front.text == key);
 
-    private string getValueFor(string key) =>
-        root.children[indexOfKey(key) + 1].children.front.text;
+    private string getValueFor(string key, string ofType)
+    {
+        auto element = root.children[indexOfKey(key) + 1];
+        assert(element.name == ofType, element.name);
+        return element.children.front.text;
+    }
 }
