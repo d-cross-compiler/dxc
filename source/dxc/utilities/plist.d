@@ -17,20 +17,27 @@ struct Plist
         return Plist(rootDict);
     }
 
-    int getInteger(string key) => getValueFor(key, ofType: "integer").to!int;
-    string getString(string key) => getValueFor(key, ofType: "string");
+    int getInteger(string key) => getTextFor(key, ofType: "integer").to!int;
+    string getString(string key) => getTextFor(key, ofType: "string");
     SysTime getDate(string key) =>
-        SysTime.fromISOExtString(getValueFor(key, ofType: "date"));
+        SysTime.fromISOExtString(getTextFor(key, ofType: "date"));
 
-    private size_t indexOfKey(string key) =>
-        root
-            .children
-            .countUntil!(e => e.name == "key" && e.children.front.text == key);
+    Plist getDict(string key) => Plist(getElementFor(key, ofType: "dict"));
 
-    private string getValueFor(string key, string ofType)
+private:
+
+    string getTextFor(string key, string ofType) =>
+        getElementFor(key, ofType).children.front.text;
+
+    Element getElementFor(string key, string ofType)
     {
         auto element = root.children[indexOfKey(key) + 1];
         assert(element.name == ofType, element.name);
-        return element.children.front.text;
+        return element;
     }
+
+    size_t indexOfKey(string key) =>
+        root
+            .children
+            .countUntil!(e => e.name == "key" && e.children.front.text == key);
 }

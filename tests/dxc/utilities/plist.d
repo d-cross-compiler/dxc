@@ -49,3 +49,21 @@ XML";
 
     assert(plist.getDate("Foo") == expected);
 }
+
+@"getDict" unittest
+{
+    const data = q"XML
+        <plist version="1.0">
+          <dict>
+            <key>Foo</key>
+            <dict>
+              <key>Bar</key>
+              <integer>2</integer>
+            </dict>
+          </dict>
+        </plist>
+XML";
+
+    auto plist = Plist.parse(data);
+    assert(plist.getDict("Foo").getInteger("Bar") == 2);
+}
