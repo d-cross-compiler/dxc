@@ -3,12 +3,9 @@ docs.json
 __dummy.html
 docs/
 /dxc
-dxc.so
-dxc.dylib
-dxc.dll
-dxc.a
-dxc.lib
-dxc-test-*
+*.so
+*.dylib
+*.dll
 *.exe
 *.pdb
 *.o
@@ -16,5 +13,6 @@ dxc-test-*
 *.lst
 *.a
 *.lib
+dxc-test-*
 xcuserdata/
 DerivedData/
