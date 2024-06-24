@@ -14,5 +14,7 @@ dxc-test-*
 *.o
 *.obj
 *.lst
+*.a
+*.lib
 xcuserdata/
 DerivedData/
