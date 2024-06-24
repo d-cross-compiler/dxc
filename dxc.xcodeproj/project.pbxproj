@@ -10,6 +10,8 @@
 		61983A562C26D03A007438A1 /* apple.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = apple.d; sourceTree = "<group>"; };
 		61983A592C26D03A007438A1 /* app.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = app.d; sourceTree = "<group>"; };
 		61983A5B2C26D03A007438A1 /* apple.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = apple.d; sourceTree = "<group>"; };
+		61983A5F2C2952FD007438A1 /* plist.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = plist.d; sourceTree = "<group>"; };
+		61983A612C29530D007438A1 /* plist.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = plist.d; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -33,6 +35,7 @@
 			isa = PBXGroup;
 			children = (
 				61983A572C26D03A007438A1 /* sdk_fetcher */,
+				61983A602C2952FD007438A1 /* utilities */,
 			);
 			path = dxc;
 			sourceTree = "<group>";
@@ -58,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				61983A5C2C26D03A007438A1 /* sdk_downloader */,
+				61983A622C29530D007438A1 /* utilities */,
 			);
 			path = dxc;
 			sourceTree = "<group>";
@@ -68,6 +72,22 @@
 				61983A5D2C26D03A007438A1 /* dxc */,
 			);
 			path = tests;
+			sourceTree = "<group>";
+		};
+		61983A602C2952FD007438A1 /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				61983A5F2C2952FD007438A1 /* plist.d */,
+			);
+			path = utilities;
+			sourceTree = "<group>";
+		};
+		61983A622C29530D007438A1 /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				61983A612C29530D007438A1 /* plist.d */,
+			);
+			path = utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

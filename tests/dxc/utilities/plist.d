@@ -1,5 +1,7 @@
 import std;
 
+import fluent.asserts;
+
 import dxc.utilities.plist;
 
 @"getInteger" unittest
@@ -66,4 +68,34 @@ XML";
 
     auto plist = Plist.parse(data);
     assert(plist.getDict("Foo").getInteger("Bar") == 2);
+}
+
+@"byKeyValue" unittest
+{
+    const data = q"XML
+        <plist version="1.0">
+          <dict>
+            <key>Foo</key>
+            <dict>
+              <key>A</key>
+              <integer>2</integer>
+            </dict>
+            <key>Bar</key>
+            <dict>
+              <key>A</key>
+              <integer>4</integer>
+            </dict>
+          </dict>
+        </plist>
+XML";
+
+    auto plist = Plist.parse(data);
+
+    auto expected = only(tuple("Foo", 2), tuple("Bar", 4));
+
+    auto actual = plist
+        .byKeyValue
+        .map!(kv => tuple(kv.key, kv.value.asDict.getInteger("A")));
+
+    expect(actual).to.equal(expected);
 }

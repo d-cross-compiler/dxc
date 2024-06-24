@@ -6,7 +6,6 @@ import dxml.dom;
 
 struct Plist
 {
-    private alias Element = DOMEntity!string;
     private Element root;
 
     static Plist parse(string data)
@@ -23,6 +22,7 @@ struct Plist
         SysTime.fromISOExtString(getTextFor(key, ofType: "date"));
 
     Plist getDict(string key) => Plist(getElementFor(key, ofType: "dict"));
+    ByKeyValueRange byKeyValue() => ByKeyValueRange(root.children);
 
 private:
 
@@ -40,4 +40,52 @@ private:
         root
             .children
             .countUntil!(e => e.name == "key" && e.children.front.text == key);
+}
+
+private:
+
+alias Element = DOMEntity!string;
+
+struct ByKeyValueRange
+{
+    private Element[] elements;
+
+    FrontElement front() => FrontElement(key, value);
+
+    void popFront()
+    {
+        elements.popFront();
+        elements.popFront();
+    }
+
+    bool empty() => elements.empty;
+
+private:
+
+    string key()
+    {
+        auto keyElement = elements.front;
+        assert(keyElement.name == "key", keyElement.name);
+
+        return keyElement.children.front.text;
+    }
+
+    Value value() => Value(elements[1]);
+}
+
+struct FrontElement
+{
+    string key;
+    Value value;
+}
+
+struct Value
+{
+    private Element element;
+
+    Plist asDict()
+    {
+        assert(element.name == "dict", element.name);
+        return Plist(element);
+    }
 }
