@@ -1,0 +1,10 @@
+{
+	"fileVersion": 1,
+	"versions": {
+		"ddmp": "0.0.1-0.dev.3",
+		"dxml": "0.4.4",
+		"fluent-asserts": "1.0.0",
+		"libdparse": "0.20.0",
+		"silly": "1.2.0-dev.2"
+	}
+}

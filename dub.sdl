@@ -11,4 +11,6 @@ configuration "unittest" {
   sourcePaths "source" "tests"
   importPaths "source"
   excludedSourceFiles "source/app.d"
+
+  dependency "fluent-asserts" version="~>1.0.0"
 }
