@@ -47,11 +47,11 @@ private:
 
 alias Element = DOMEntity!string;
 
-struct ByKeyValueRange
+struct ByValueRange
 {
     private Element[] elements;
 
-    FrontElement front() => FrontElement(key, value);
+    Value front() => Value(elements[1]);
 
     void popFront()
     {
@@ -60,6 +60,26 @@ struct ByKeyValueRange
     }
 
     bool empty() => elements.empty;
+}
+
+struct ByKeyValueRange
+{
+    private ByValueRange base;
+    alias base this;
+
+    this(Element[] elements)
+    {
+        base = ByValueRange(elements);
+    }
+
+    FrontElement front() => FrontElement(key, base.front);
+
+    void popFront()
+    {
+        base.popFront();
+    }
+
+    bool empty() => base.empty;
 
 private:
 
@@ -70,8 +90,6 @@ private:
 
         return keyElement.children.front.text;
     }
-
-    Value value() => Value(elements[1]);
 }
 
 struct FrontElement
@@ -89,19 +107,4 @@ struct Value
         assert(element.name == "dict", element.name);
         return Plist(element);
     }
-}
-
-struct ByValueRange
-{
-    private Element[] elements;
-
-    Value front() => Value(elements[1]);
-
-    void popFront()
-    {
-        elements.popFront();
-        elements.popFront();
-    }
-
-    bool empty() => elements.empty;;
 }
