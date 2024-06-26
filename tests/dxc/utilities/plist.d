@@ -16,7 +16,7 @@ import dxc.utilities.plist;
 XML";
 
     auto plist = Plist.parse(data);
-    assert(plist.getInteger("Foo") == 2);
+    expect(plist.getInteger("Foo")).to.equal(2);
 }
 
 @"getString" unittest
@@ -31,7 +31,7 @@ XML";
 XML";
 
     auto plist = Plist.parse(data);
-    assert(plist.getString("Foo") == "bar");
+    expect(plist.getString("Foo")).to.equal("bar");
 }
 
 @"getDate" unittest
@@ -47,9 +47,8 @@ XML";
 
     auto plist = Plist.parse(data);
     const date = DateTime(2024, 6, 20, 18, 1, 48);
-    const expected = SysTime(date, UTC());
 
-    assert(plist.getDate("Foo") == expected);
+    expect(plist.getDate("Foo")).to.equal(SysTime(date, UTC()));
 }
 
 @"getDict" unittest
@@ -67,7 +66,7 @@ XML";
 XML";
 
     auto plist = Plist.parse(data);
-    assert(plist.getDict("Foo").getInteger("Bar") == 2);
+    expect(plist.getDict("Foo").getInteger("Bar")).to.equal(2);
 }
 
 @"byKeyValue" unittest
