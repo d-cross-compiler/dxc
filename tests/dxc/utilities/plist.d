@@ -98,3 +98,31 @@ XML";
 
     expect(actual).to.equal(expected);
 }
+
+@"byValue" unittest
+{
+    const data = q"XML
+        <plist version="1.0">
+          <dict>
+            <key>Foo</key>
+            <dict>
+              <key>A</key>
+              <integer>2</integer>
+            </dict>
+            <key>Bar</key>
+            <dict>
+              <key>A</key>
+              <integer>4</integer>
+            </dict>
+          </dict>
+        </plist>
+XML";
+
+    auto plist = Plist.parse(data);
+
+    auto actual = plist
+        .byValue
+        .map!(value => value.asDict.getInteger("A"));
+
+    expect(actual).to.equal(only(2, 4));
+}

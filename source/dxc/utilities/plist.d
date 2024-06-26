@@ -23,6 +23,7 @@ struct Plist
 
     Plist getDict(string key) => Plist(getElementFor(key, ofType: "dict"));
     ByKeyValueRange byKeyValue() => ByKeyValueRange(root.children);
+    ByValueRange byValue() => ByValueRange(root.children);
 
 private:
 
@@ -88,4 +89,19 @@ struct Value
         assert(element.name == "dict", element.name);
         return Plist(element);
     }
+}
+
+struct ByValueRange
+{
+    private Element[] elements;
+
+    Value front() => Value(elements[1]);
+
+    void popFront()
+    {
+        elements.popFront();
+        elements.popFront();
+    }
+
+    bool empty() => elements.empty;;
 }
