@@ -4,6 +4,8 @@ import std;
 
 import dxml.dom;
 
+import lime.core.optional;
+
 struct Plist
 {
     private Element root;
@@ -16,25 +18,41 @@ struct Plist
         return Plist(rootDict);
     }
 
-    int getInteger(string key) => getTextFor(key, ofType: "integer").to!int;
-    string getString(string key) => getTextFor(key, ofType: "string");
-    SysTime getDate(string key) =>
-        SysTime.fromISOExtString(getTextFor(key, ofType: "date"));
+    static Array emptyArray() => Array([]);
 
-    Plist getDict(string key) => Plist(getElementFor(key, ofType: "dict"));
+    Optional!int getInteger(string key) =>
+        getTextFor(key, ofType: "integer").map(e => e.to!int);
+
+    Optional!string getString(string key) => getTextFor(key, ofType: "string");
+
+    Optional!SysTime getDate(string key) =>
+        getTextFor(key, ofType: "date").map(e => SysTime.fromISOExtString(e));
+
+    Optional!Plist getDict(string key) =>
+        getElementFor(key, ofType: "dict").map(e => Plist(e));
+
+    Optional!Array getArray(string key) =>
+        getElementFor(key, ofType: "array").map(e => Array(e.children));
+
     ByKeyValueRange byKeyValue() => ByKeyValueRange(root.children);
     ByValueRange byValue() => ByValueRange(root.children);
 
 private:
 
-    string getTextFor(string key, string ofType) =>
-        getElementFor(key, ofType).children.front.text;
+    Optional!string getTextFor(string key, string ofType) =>
+        getElementFor(key, ofType)
+            .map(e => e.children.front.text);
 
-    Element getElementFor(string key, string ofType)
+    Optional!Element getElementFor(string key, string ofType)
     {
-        auto element = root.children[indexOfKey(key) + 1];
+        const index = indexOfKey(key);
+
+        if (index == -1)
+            return none!Element;
+
+        auto element = root.children[index + 1];
         assert(element.name == ofType, element.name);
-        return element;
+        return element.some;
     }
 
     size_t indexOfKey(string key) =>
@@ -107,4 +125,13 @@ struct Value
         assert(element.name == "dict", element.name);
         return Plist(element);
     }
+}
+
+struct Array
+{
+    private Element[] elements;
+
+    Value front() => Value(elements[0]);
+    void popFront() => elements.popFront();
+    bool empty() => elements.empty;
 }

@@ -95,11 +95,11 @@
 /* Begin PBXLegacyTarget section */
 		61983A502C26CF8B007438A1 /* dxc */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(ACTION) -b unittest";
+			buildArgumentsString = "build -b unittest";
 			buildConfigurationList = 61983A532C26CF8B007438A1 /* Build configuration list for PBXLegacyTarget "dxc" */;
 			buildPhases = (
 			);
-			buildToolPath = "/Users/jacobcarlborg/.dvm/compilers/ldc-1.38.0/bin/dub";
+			buildToolPath = "/Users/jacobcarlborg/.dvm/compilers/ldc-1.39.0/bin/dub";
 			buildWorkingDirectory = "";
 			dependencies = (
 			);

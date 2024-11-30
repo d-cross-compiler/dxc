@@ -1,8 +1,10 @@
 import std;
 
 import fluent.asserts;
+import lime.core.optional;
 
 import dxc.utilities.plist;
+import dxc.utilities.algorithms;
 
 @"getInteger" unittest
 {
@@ -16,7 +18,22 @@ import dxc.utilities.plist;
 XML";
 
     auto plist = Plist.parse(data);
-    expect(plist.getInteger("Foo")).to.equal(2);
+    expect(plist.getInteger("Foo").or(-1)).to.equal(2);
+}
+
+@"getInteger - missing key" unittest
+{
+    const data = q"XML
+        <plist version="1.0">
+          <dict>
+            <key>Bar</key>
+            <integer>2</integer>
+          </dict>
+        </plist>
+XML";
+
+    auto plist = Plist.parse(data);
+    expect(plist.getInteger("Foo").empty);
 }
 
 @"getString" unittest
@@ -31,7 +48,7 @@ XML";
 XML";
 
     auto plist = Plist.parse(data);
-    expect(plist.getString("Foo")).to.equal("bar");
+    expect(plist.getString("Foo").or("")).to.equal("bar");
 }
 
 @"getDate" unittest
@@ -48,7 +65,7 @@ XML";
     auto plist = Plist.parse(data);
     const date = DateTime(2024, 6, 20, 18, 1, 48);
 
-    expect(plist.getDate("Foo")).to.equal(SysTime(date, UTC()));
+    expect(plist.getDate("Foo").or(SysTime())).to.equal(SysTime(date, UTC()));
 }
 
 @"getDict" unittest
@@ -66,7 +83,36 @@ XML";
 XML";
 
     auto plist = Plist.parse(data);
-    expect(plist.getDict("Foo").getInteger("Bar")).to.equal(2);
+    expect(plist.getDict("Foo").getInteger("Bar").or(-1)).to.equal(2);
+}
+
+@"getArray" unittest
+{
+    const data = q"XML
+        <plist version="1.0">
+          <dict>
+            <key>Foo</key>
+            <array>
+              <dict>
+                <key>Foo</key>
+                <integer>2</integer>
+              </dict>
+              <dict>
+                <key>Foo</key>
+                <integer>3</integer>
+              </dict>
+            </array>
+          </dict>
+        </plist>
+XML";
+
+    auto plist = Plist.parse(data);
+    auto res = plist
+        .getArray("Foo")
+        .or(Plist.emptyArray)
+        .flatMap!(e => e.asDict.getInteger("Foo"));
+
+    expect(res).to.equal([2, 3]);
 }
 
 @"byKeyValue" unittest
@@ -94,7 +140,7 @@ XML";
 
     auto actual = plist
         .byKeyValue
-        .map!(kv => tuple(kv.key, kv.value.asDict.getInteger("A")));
+        .map!(kv => tuple(kv.key, kv.value.asDict.getInteger("A").or(-1)));
 
     expect(actual).to.equal(expected);
 }
@@ -122,7 +168,7 @@ XML";
 
     auto actual = plist
         .byValue
-        .map!(value => value.asDict.getInteger("A"));
+        .map!(value => value.asDict.getInteger("A").or(-1));
 
     expect(actual).to.equal(only(2, 4));
 }

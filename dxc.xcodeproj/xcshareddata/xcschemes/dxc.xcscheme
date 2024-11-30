@@ -44,6 +44,16 @@
          runnableDebuggingMode = "0"
          FilePath = "/Users/jacobcarlborg/development/d/dxc/dxc-test-unittest">
       </PathRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "-i"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "getArray"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
