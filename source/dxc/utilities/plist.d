@@ -36,6 +36,7 @@ struct Plist
 
     ByKeyValueRange byKeyValue() => ByKeyValueRange(root.children);
     ByValueRange byValue() => ByValueRange(root.children);
+    bool containsKey(string key) => indexOfKey(key) != -1;
 
 private:
 

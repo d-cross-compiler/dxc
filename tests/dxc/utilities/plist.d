@@ -172,3 +172,33 @@ XML";
 
     expect(actual).to.equal(only(2, 4));
 }
+
+@"containsKey" unittest
+{
+    const data = q"XML
+        <plist version="1.0">
+          <dict>
+            <key>Foo</key>
+            <integer>2</integer>
+          </dict>
+        </plist>
+XML";
+
+    auto plist = Plist.parse(data);
+    expect(plist.containsKey("Foo")).to.equal(true);
+}
+
+@"containsKey - when the key is missing" unittest
+{
+    const data = q"XML
+        <plist version="1.0">
+          <dict>
+            <key>Foo</key>
+            <integer>2</integer>
+          </dict>
+        </plist>
+XML";
+
+    auto plist = Plist.parse(data);
+    expect(plist.containsKey("Bar")).to.equal(false);
+}
