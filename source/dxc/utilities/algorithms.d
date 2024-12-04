@@ -8,7 +8,7 @@ if (func.length >= 1)
     import std.algorithm : cache, map, joiner;
 
     auto flatMap(Range)(Range range)
-    if (isInputRange!(Unqual!Range)) => range.map!func.cache.joiner;
+    if (isInputRange!(Unqual!Range)) => map!func(range).cache.joiner;
 }
 
 ///
