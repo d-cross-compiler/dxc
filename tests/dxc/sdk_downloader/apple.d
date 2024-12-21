@@ -59,44 +59,9 @@ enum catalogData =
                         <key>URL</key>
                         <string>https://swcdn.apple.com/content/downloads/14/48/052-59890-A_I0F5YGAY0Y/p9n40hio7892gou31o1v031ng6fnm9sb3c/CLTools_macOSNMOS_SDK.pkg</string>
                     </dict>
-                    <dict>
-                        <key>Digest</key>
-                        <string>92e85a0f035a02000847ad273eca90f2e056789c</string>
-                        <key>Size</key>
-                        <integer>565536039</integer>
-                        <key>MetadataURL</key>
-                        <string>https://swdist.apple.com/content/downloads/14/48/052-59890-A_I0F5YGAY0Y/p9n40hio7892gou31o1v031ng6fnm9sb3c/CLTools_Executables.pkm</string>
-                        <key>URL</key>
-                        <string>https://swcdn.apple.com/content/downloads/14/48/052-59890-A_I0F5YGAY0Y/p9n40hio7892gou31o1v031ng6fnm9sb3c/CLTools_Executables.pkg</string>
-                    </dict>
-                    <dict>
-                        <key>Digest</key>
-                        <string>51e67d551c2f2ff3a50cab8259b11b3f88638143</string>
-                        <key>Size</key>
-                        <integer>5369</integer>
-                        <key>MetadataURL</key>
-                        <string>https://swdist.apple.com/content/downloads/14/48/052-59890-A_I0F5YGAY0Y/p9n40hio7892gou31o1v031ng6fnm9sb3c/CLTools_macOS_SDK.pkm</string>
-                        <key>URL</key>
-                        <string>https://swcdn.apple.com/content/downloads/14/48/052-59890-A_I0F5YGAY0Y/p9n40hio7892gou31o1v031ng6fnm9sb3c/CLTools_macOS_SDK.pkg</string>
-                    </dict>
-                    <dict>
-                        <key>Digest</key>
-                        <string>d661c35e47232c8bbbf810368e99ff48bff0fab7</string>
-                        <key>Size</key>
-                        <integer>51079417</integer>
-                        <key>MetadataURL</key>
-                        <string>https://swdist.apple.com/content/downloads/14/48/052-59890-A_I0F5YGAY0Y/p9n40hio7892gou31o1v031ng6fnm9sb3c/CLTools_macOSLMOS_SDK.pkm</string>
-                        <key>URL</key>
-                        <string>https://swcdn.apple.com/content/downloads/14/48/052-59890-A_I0F5YGAY0Y/p9n40hio7892gou31o1v031ng6fnm9sb3c/CLTools_macOSLMOS_SDK.pkg</string>
-                    </dict>
                 </array>
                 <key>PostDate</key>
                 <date>2024-03-05T21:14:36Z</date>
-                <key>Distributions</key>
-                <dict>
-                    <key>English</key>
-                    <string>https://swdist.apple.com/content/downloads/14/48/052-59890-A_I0F5YGAY0Y/p9n40hio7892gou31o1v031ng6fnm9sb3c/052-59890.English.dist</string>
-                </dict>
             </dict>
         </dict>
     </dict>
