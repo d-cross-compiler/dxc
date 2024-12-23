@@ -11,7 +11,7 @@ struct AppleDownloader
 {
     void download()
     {
-        // .download("https://swscan.apple.com/content/catalogs/others/index-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog");
+        // .download("https://swscan.apple.com/content/catalogs/others/index-15-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog");
     }
 }
 
@@ -36,7 +36,7 @@ enum catalogData =
             <key>052-59890</key>
             <dict>
                 <key>ServerMetadataURL</key>
-                <string>https://swcdn.apple.com/content/downloads/14/48/052-59890-A_I0F5YGAY0Y/p9n40hio7892gou31o1v031ng6fnm9sb3c/CLTools_macOSNMOS_SDK.smd</string>
+                <string>https://swcdn.apple.com/content/CLTools_macOSNMOS_SDK.smd</string>
                 <key>Packages</key>
                 <array>
                     <dict>
@@ -45,9 +45,9 @@ enum catalogData =
                         <key>Size</key>
                         <integer>48539454</integer>
                         <key>MetadataURL</key>
-                        <string>https://swdist.apple.com/content/downloads/14/48/052-59890-A_I0F5YGAY0Y/p9n40hio7892gou31o1v031ng6fnm9sb3c/CLTools_SwiftBackDeploy.pkm</string>
+                        <string>https://swdist.apple.com/content/CLTools_SwiftBackDeploy.pkm</string>
                         <key>URL</key>
-                        <string>https://swcdn.apple.com/content/downloads/14/48/052-59890-A_I0F5YGAY0Y/p9n40hio7892gou31o1v031ng6fnm9sb3c/CLTools_SwiftBackDeploy.pkg</string>
+                        <string>https://swcdn.apple.com/content/CLTools_SwiftBackDeploy.pkg</string>
                     </dict>
                     <dict>
                         <key>Digest</key>
@@ -55,9 +55,9 @@ enum catalogData =
                         <key>Size</key>
                         <integer>59320979</integer>
                         <key>MetadataURL</key>
-                        <string>https://swdist.apple.com/content/downloads/14/48/052-59890-A_I0F5YGAY0Y/p9n40hio7892gou31o1v031ng6fnm9sb3c/CLTools_macOSNMOS_SDK.pkm</string>
+                        <string>https://swdist.apple.com/content/CLTools_macOSNMOS_SDK.pkm</string>
                         <key>URL</key>
-                        <string>https://swcdn.apple.com/content/downloads/14/48/052-59890-A_I0F5YGAY0Y/p9n40hio7892gou31o1v031ng6fnm9sb3c/CLTools_macOSNMOS_SDK.pkg</string>
+                        <string>https://swcdn.apple.com/content/CLTools_macOSNMOS_SDK.pkg</string>
                     </dict>
                 </array>
                 <key>PostDate</key>
@@ -118,11 +118,11 @@ private:
 @"Download macOS SDK" unittest
 {
     auto catalog = Catalog.parse(catalogData);
-    expect(catalog.latestSdkProduct.metadataUrl).to.equal("https://swcdn.apple.com/content/downloads/14/48/052-59890-A_I0F5YGAY0Y/p9n40hio7892gou31o1v031ng6fnm9sb3c/CLTools_macOSNMOS_SDK.smd");
+    expect(catalog.latestSdkProduct.metadataUrl).to.equal("https://swcdn.apple.com/content/CLTools_macOSNMOS_SDK.smd");
 
-    expect(catalog.latestSdkProduct.packages[0].url).to.equal("https://swcdn.apple.com/content/downloads/14/48/052-59890-A_I0F5YGAY0Y/p9n40hio7892gou31o1v031ng6fnm9sb3c/CLTools_SwiftBackDeploy.pkg");
+    expect(catalog.latestSdkProduct.packages[0].url).to.equal("https://swcdn.apple.com/content/CLTools_SwiftBackDeploy.pkg");
 
-    expect(catalog.latestSdkUrl).to.equal("https://swcdn.apple.com/content/downloads/14/48/052-59890-A_I0F5YGAY0Y/p9n40hio7892gou31o1v031ng6fnm9sb3c/CLTools_macOSNMOS_SDK.pkg");
+    expect(catalog.latestSdkUrl).to.equal("https://swcdn.apple.com/content/CLTools_macOSNMOS_SDK.pkg");
 
     // const catalog = readText("/Users/jacobcarlborg/development/d/dxc/index-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.plist");
     // auto plist = Plist.parse(catalog);
