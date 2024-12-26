@@ -8,6 +8,7 @@ dependency "silly" version="~>1.2.0-dev.2"
 dependency "dxml" version="~>0.4"
 dependency "lime" path="/Users/jacobcarlborg/development/d/lime"
 // dependency "lime" version="9cdddf0" repository="git+https://github.com/jacob-carlborg/lime"
+dependency "mocked" version="~>4.2.1"
 
 subConfiguration "lime:core" "phobos-compatibility"
 
