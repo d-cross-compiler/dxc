@@ -1,5 +1,7 @@
 module dxc.sdk.apple.url_finder;
 
+import std.conv;
+
 import dxc.sdk.apple.catalog;
 import dxc.utilities.downloader;
 
@@ -14,7 +16,7 @@ class UrlFinder
 
     this(
         string catalogUrl = defaultCatalogUrl,
-        Downloader downloader = Downloader.defaultDownloader
+        Downloader downloader = Downloader.default_
     )
     {
         this.catalogUrl = catalogUrl;
@@ -23,7 +25,7 @@ class UrlFinder
 
     string find()
     {
-        immutable data = downloader.download(catalogUrl);
+        immutable data = downloader.download(catalogUrl).text;
         return Catalog.parse(data).latestSdkUrl;
     }
 }

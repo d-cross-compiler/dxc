@@ -5,6 +5,7 @@ import fluent.asserts;
 import mocked;
 
 import dxc.sdk.apple.url_finder;
+import dxc.utilities.data;
 import dxc.utilities.downloader;
 
 enum sdkUrl = "https://swcdn.apple.com/content/CLTools_macOSNMOS_SDK.pkg";
@@ -53,7 +54,7 @@ i`<?xml version="1.0"?>
 @"dxc.sdk.apple.url_finder.UrlFinder - find" unittest
 {
     auto downloader = Mocker().stub!Downloader;
-    downloader.stub.download.returns(catalogData);
+    downloader.stub.download.returns(Data(catalogData));
 
     auto finder = new UrlFinder(downloader: downloader.get);
 

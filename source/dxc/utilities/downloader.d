@@ -1,10 +1,11 @@
 module dxc.utilities.downloader;
 
+import dxc.utilities.data;
 import dxc.utilities.phobos_downloader;
 
 interface Downloader
 {
-    string download(string url);
+    Data download(string url);
 
-    static Downloader defaultDownloader() => new PhobosDownloader;
+    static Downloader default_() => new PhobosDownloader;
 }
