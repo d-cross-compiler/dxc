@@ -16,5 +16,6 @@ struct Data
 
     static assumeUnique(char[] bytes) => Data(cast(immutable(ubyte)[]) bytes);
 
-    immutable(ubyte)[] bytes() => bytes_;
+    immutable(ubyte)[] bytes() const => bytes_;
+    string asString() const => cast(string) bytes;
 }
