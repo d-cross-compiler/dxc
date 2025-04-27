@@ -13,14 +13,13 @@ import dxc.core.target;
 
 class Install : Command
 {
-    this(Arguments arguments)
+    this(Sdk.Install arguments)
     {
         this.arguments = arguments;
     }
 
     int run()
     {
-        const triple = "x86_64-unknown-freebsd13.1";
         const target = Target.parse(triple);
         auto urlBuilder = SdkUrlBuilder(target);
         SdkDownloader downloader = new GenericSdkDownloader(urlBuilder);
@@ -35,5 +34,7 @@ class Install : Command
 
 private:
 
-    Arguments arguments;
+    Sdk.Install arguments;
+
+    string triple() => arguments.target;
 }

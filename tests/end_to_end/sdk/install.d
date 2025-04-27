@@ -38,7 +38,7 @@ static this()
     Registry.instance.register("install.path", "unknown", "exist", &exist);
 }
 
-@"dxc sdk install" unittest
+@"dxc sdk install x86_64-unknown-freebsd13.1" unittest
 {
     auto result = execute(["./dxc", "sdk", "install", "x86_64-unknown-freebsd13.1"]);
 
@@ -46,3 +46,10 @@ static this()
     expect(path("tmp/sdk-0.0.1-x86_64-unknown-freebsd13.1.tar.xz")).to.exist;
 }
 
+@"dxc sdk install x86_64-unknown-openbsd7.3" unittest
+{
+    auto result = execute(["./dxc", "sdk", "install", "x86_64-unknown-openbsd7.3"]);
+
+    expect(result.status).to.equal(0).because(result.output);
+    expect(path("tmp/sdk-0.0.1-x86_64-unknown-openbsd7.3.tar.xz")).to.exist;
+}

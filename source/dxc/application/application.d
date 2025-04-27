@@ -38,7 +38,7 @@ private:
     {
         return arguments.command.match!(
             (Sdk sdk) => sdk.command.match!(
-                (Sdk.Install install) => new Install(arguments)
+                (Sdk.Install install) => new Install(install)
             )
         );
     }
