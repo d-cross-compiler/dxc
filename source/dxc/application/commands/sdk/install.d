@@ -14,7 +14,7 @@ class Install : Command
 
     int run()
     {
-        new Installer(target).install();
+        Installer.forTarget(target).install();
         return 0;
     }
 
