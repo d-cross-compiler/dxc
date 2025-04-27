@@ -8,7 +8,7 @@ struct SdkUrlBuilder
 {
     private enum sdkVersion = "0.0.1";
 
-    private enum defaultBaseUrl = "https://github.com/d-cross-compiler/ " ~
+    private enum defaultBaseUrl = "https://github.com/d-cross-compiler/" ~
         i"sdk-extractor/releases/download/v$(sdkVersion)/sdk-$(sdkVersion)-".text;
 
     private Target target;

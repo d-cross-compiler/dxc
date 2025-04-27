@@ -42,7 +42,10 @@ struct TripleParser
                 architecture: toArchitecture(components[0]),
                 // operatingSystem: toOperatingSystem(components[1]),
             );
-            case 3: return Target(architecture: toArchitecture(components[0]));
+            case 3: return Target(
+                triple: triple,
+                architecture: toArchitecture(components[0])
+            );
             default:
                 assert(0);
         }

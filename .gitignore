@@ -13,6 +13,8 @@ docs/
 *.lst
 *.a
 *.lib
+*.plist
 dxc-test-*
 xcuserdata/
 DerivedData/
+tmp/

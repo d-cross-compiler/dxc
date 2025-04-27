@@ -1,6 +1,7 @@
 {
 	"fileVersion": 1,
 	"versions": {
+		"argparse": "1.4.1",
 		"ddmp": "0.0.1-0.dev.3",
 		"dshould": "1.7.2",
 		"dxml": "0.4.4",

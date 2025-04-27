@@ -7,87 +7,195 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		61983A562C26D03A007438A1 /* apple.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = apple.d; sourceTree = "<group>"; };
-		61983A592C26D03A007438A1 /* app.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = app.d; sourceTree = "<group>"; };
-		61983A5B2C26D03A007438A1 /* apple.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = apple.d; sourceTree = "<group>"; };
-		61983A5F2C2952FD007438A1 /* plist.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = plist.d; sourceTree = "<group>"; };
-		61983A612C29530D007438A1 /* plist.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = plist.d; sourceTree = "<group>"; };
+		61646C412DB69D9A00941D45 /* install.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = install.d; sourceTree = "<group>"; };
+		61646C442DB69D9A00941D45 /* application.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = application.d; sourceTree = "<group>"; };
+		61646C452DB69D9A00941D45 /* arguments.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = arguments.d; sourceTree = "<group>"; };
+		61646C472DB69D9A00941D45 /* target.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = target.d; sourceTree = "<group>"; };
+		61646C492DB69D9A00941D45 /* apple_sdk_downloader.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = apple_sdk_downloader.d; sourceTree = "<group>"; };
+		61646C4A2DB69D9A00941D45 /* apple_sdk_url_finder.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = apple_sdk_url_finder.d; sourceTree = "<group>"; };
+		61646C4B2DB69D9A00941D45 /* catalog.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = catalog.d; sourceTree = "<group>"; };
+		61646C4D2DB69D9A00941D45 /* generic_sdk_downloader.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = generic_sdk_downloader.d; sourceTree = "<group>"; };
+		61646C4E2DB69D9A00941D45 /* sdk_downloader.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = sdk_downloader.d; sourceTree = "<group>"; };
+		61646C4F2DB69D9A00941D45 /* sdk_url_builder.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = sdk_url_builder.d; sourceTree = "<group>"; };
+		61646C512DB69D9A00941D45 /* algorithms.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = algorithms.d; sourceTree = "<group>"; };
+		61646C522DB69D9A00941D45 /* data.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = data.d; sourceTree = "<group>"; };
+		61646C532DB69D9A00941D45 /* downloader.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = downloader.d; sourceTree = "<group>"; };
+		61646C542DB69D9A00941D45 /* phobos_downloader.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = phobos_downloader.d; sourceTree = "<group>"; };
+		61646C552DB69D9A00941D45 /* plist.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = plist.d; sourceTree = "<group>"; };
+		61646C572DB69D9A00941D45 /* main.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = main.d; sourceTree = "<group>"; };
+		61646C5A2DB69D9A00941D45 /* target.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = target.d; sourceTree = "<group>"; };
+		61646C5C2DB69D9A00941D45 /* apple_sdk_downloader.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = apple_sdk_downloader.d; sourceTree = "<group>"; };
+		61646C5D2DB69D9A00941D45 /* apple_sdk_url_finder.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = apple_sdk_url_finder.d; sourceTree = "<group>"; };
+		61646C5F2DB69D9A00941D45 /* generic_sdk_downloader.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = generic_sdk_downloader.d; sourceTree = "<group>"; };
+		61646C602DB69D9A00941D45 /* sdk_url_builder.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = sdk_url_builder.d; sourceTree = "<group>"; };
+		61646C622DB69D9A00941D45 /* plist.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = plist.d; sourceTree = "<group>"; };
+		61646C652DB69D9A00941D45 /* install.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = install.d; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		61983A4B2C26CF8B007438A1 = {
+		61646C422DB69D9A00941D45 /* sdk */ = {
 			isa = PBXGroup;
 			children = (
-				61983A5A2C26D03A007438A1 /* source */,
-				61983A5E2C26D03A007438A1 /* tests */,
+				61646C412DB69D9A00941D45 /* install.d */,
 			);
+			path = sdk;
 			sourceTree = "<group>";
 		};
-		61983A572C26D03A007438A1 /* sdk_fetcher */ = {
+		61646C432DB69D9A00941D45 /* commands */ = {
 			isa = PBXGroup;
 			children = (
-				61983A562C26D03A007438A1 /* apple.d */,
+				61646C422DB69D9A00941D45 /* sdk */,
 			);
-			path = sdk_fetcher;
+			path = commands;
 			sourceTree = "<group>";
 		};
-		61983A582C26D03A007438A1 /* dxc */ = {
+		61646C462DB69D9A00941D45 /* application */ = {
 			isa = PBXGroup;
 			children = (
-				61983A572C26D03A007438A1 /* sdk_fetcher */,
-				61983A602C2952FD007438A1 /* utilities */,
+				61646C432DB69D9A00941D45 /* commands */,
+				61646C442DB69D9A00941D45 /* application.d */,
+				61646C452DB69D9A00941D45 /* arguments.d */,
+			);
+			path = application;
+			sourceTree = "<group>";
+		};
+		61646C482DB69D9A00941D45 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				61646C472DB69D9A00941D45 /* target.d */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		61646C4C2DB69D9A00941D45 /* apple */ = {
+			isa = PBXGroup;
+			children = (
+				61646C492DB69D9A00941D45 /* apple_sdk_downloader.d */,
+				61646C4A2DB69D9A00941D45 /* apple_sdk_url_finder.d */,
+				61646C4B2DB69D9A00941D45 /* catalog.d */,
+			);
+			path = apple;
+			sourceTree = "<group>";
+		};
+		61646C502DB69D9A00941D45 /* sdk */ = {
+			isa = PBXGroup;
+			children = (
+				61646C4C2DB69D9A00941D45 /* apple */,
+				61646C4D2DB69D9A00941D45 /* generic_sdk_downloader.d */,
+				61646C4E2DB69D9A00941D45 /* sdk_downloader.d */,
+				61646C4F2DB69D9A00941D45 /* sdk_url_builder.d */,
+			);
+			path = sdk;
+			sourceTree = "<group>";
+		};
+		61646C562DB69D9A00941D45 /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				61646C512DB69D9A00941D45 /* algorithms.d */,
+				61646C522DB69D9A00941D45 /* data.d */,
+				61646C532DB69D9A00941D45 /* downloader.d */,
+				61646C542DB69D9A00941D45 /* phobos_downloader.d */,
+				61646C552DB69D9A00941D45 /* plist.d */,
+			);
+			path = utilities;
+			sourceTree = "<group>";
+		};
+		61646C582DB69D9A00941D45 /* dxc */ = {
+			isa = PBXGroup;
+			children = (
+				61646C462DB69D9A00941D45 /* application */,
+				61646C482DB69D9A00941D45 /* core */,
+				61646C502DB69D9A00941D45 /* sdk */,
+				61646C562DB69D9A00941D45 /* utilities */,
+				61646C572DB69D9A00941D45 /* main.d */,
 			);
 			path = dxc;
 			sourceTree = "<group>";
 		};
-		61983A5A2C26D03A007438A1 /* source */ = {
+		61646C592DB69D9A00941D45 /* source */ = {
 			isa = PBXGroup;
 			children = (
-				61983A582C26D03A007438A1 /* dxc */,
-				61983A592C26D03A007438A1 /* app.d */,
+				61646C582DB69D9A00941D45 /* dxc */,
 			);
 			path = source;
 			sourceTree = "<group>";
 		};
-		61983A5C2C26D03A007438A1 /* sdk_downloader */ = {
+		61646C5B2DB69D9A00941D45 /* core */ = {
 			isa = PBXGroup;
 			children = (
-				61983A5B2C26D03A007438A1 /* apple.d */,
+				61646C5A2DB69D9A00941D45 /* target.d */,
 			);
-			path = sdk_downloader;
+			path = core;
 			sourceTree = "<group>";
 		};
-		61983A5D2C26D03A007438A1 /* dxc */ = {
+		61646C5E2DB69D9A00941D45 /* apple */ = {
 			isa = PBXGroup;
 			children = (
-				61983A5C2C26D03A007438A1 /* sdk_downloader */,
-				61983A622C29530D007438A1 /* utilities */,
+				61646C5C2DB69D9A00941D45 /* apple_sdk_downloader.d */,
+				61646C5D2DB69D9A00941D45 /* apple_sdk_url_finder.d */,
+			);
+			path = apple;
+			sourceTree = "<group>";
+		};
+		61646C612DB69D9A00941D45 /* sdk */ = {
+			isa = PBXGroup;
+			children = (
+				61646C5E2DB69D9A00941D45 /* apple */,
+				61646C5F2DB69D9A00941D45 /* generic_sdk_downloader.d */,
+				61646C602DB69D9A00941D45 /* sdk_url_builder.d */,
+			);
+			path = sdk;
+			sourceTree = "<group>";
+		};
+		61646C632DB69D9A00941D45 /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				61646C622DB69D9A00941D45 /* plist.d */,
+			);
+			path = utilities;
+			sourceTree = "<group>";
+		};
+		61646C642DB69D9A00941D45 /* dxc */ = {
+			isa = PBXGroup;
+			children = (
+				61646C5B2DB69D9A00941D45 /* core */,
+				61646C612DB69D9A00941D45 /* sdk */,
+				61646C632DB69D9A00941D45 /* utilities */,
 			);
 			path = dxc;
 			sourceTree = "<group>";
 		};
-		61983A5E2C26D03A007438A1 /* tests */ = {
+		61646C662DB69D9A00941D45 /* sdk */ = {
 			isa = PBXGroup;
 			children = (
-				61983A5D2C26D03A007438A1 /* dxc */,
+				61646C652DB69D9A00941D45 /* install.d */,
+			);
+			path = sdk;
+			sourceTree = "<group>";
+		};
+		61646C672DB69D9A00941D45 /* end_to_end */ = {
+			isa = PBXGroup;
+			children = (
+				61646C662DB69D9A00941D45 /* sdk */,
+			);
+			path = end_to_end;
+			sourceTree = "<group>";
+		};
+		61646C682DB69D9A00941D45 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				61646C642DB69D9A00941D45 /* dxc */,
+				61646C672DB69D9A00941D45 /* end_to_end */,
 			);
 			path = tests;
 			sourceTree = "<group>";
 		};
-		61983A602C2952FD007438A1 /* utilities */ = {
+		61983A4B2C26CF8B007438A1 = {
 			isa = PBXGroup;
 			children = (
-				61983A5F2C2952FD007438A1 /* plist.d */,
+				61646C592DB69D9A00941D45 /* source */,
+				61646C682DB69D9A00941D45 /* tests */,
 			);
-			path = utilities;
-			sourceTree = "<group>";
-		};
-		61983A622C29530D007438A1 /* utilities */ = {
-			isa = PBXGroup;
-			children = (
-				61983A612C29530D007438A1 /* plist.d */,
-			);
-			path = utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,7 +203,7 @@
 /* Begin PBXLegacyTarget section */
 		61983A502C26CF8B007438A1 /* dxc */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "build -b unittest";
+			buildArgumentsString = build;
 			buildConfigurationList = 61983A532C26CF8B007438A1 /* Build configuration list for PBXLegacyTarget "dxc" */;
 			buildPhases = (
 			);

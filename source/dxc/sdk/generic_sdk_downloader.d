@@ -5,11 +5,12 @@ import std.conv;
 import lime.core.optional;
 
 import dxc.core.target;
+import dxc.sdk.sdk_downloader;
 import dxc.sdk.sdk_url_builder;
 import dxc.utilities.data;
 import dxc.utilities.downloader;
 
-class GenericSdkDownloader
+class GenericSdkDownloader : SdkDownloader
 {
     private SdkUrlBuilder urlBuilder;
     private Downloader downloader;

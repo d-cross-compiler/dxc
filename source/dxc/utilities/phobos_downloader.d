@@ -8,5 +8,5 @@ class PhobosDownloader : Downloader
     import std.net.curl;
     import std.exception;
 
-    Data download(string url) => Data.assumeUnique(get(url));
+    Data download(string url) => Data.assumeUnique(get!(AutoProtocol, ubyte)(url));
 }

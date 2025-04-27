@@ -42,15 +42,19 @@
       allowLocationSimulation = "YES">
       <PathRunnable
          runnableDebuggingMode = "0"
-         FilePath = "/Users/jacobcarlborg/development/d/dxc/dxc-test-unittest">
+         FilePath = "/Users/jacobcarlborg/development/d/dxc/dxc">
       </PathRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-i"
+            argument = "sdk"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "getArray"
+            argument = "install"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "--help"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
